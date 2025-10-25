@@ -10,13 +10,22 @@
 def word_separator(sentence):
 
     new_sentence = ""
-    #    Add your logic here
+    
+    new_sentence += sentence[0].upper()
+
+    for char in sentence [1:]:
+        if char.isupper():
+            new_sentence += " " + char.lower()
+        else:
+            new_sentence += char
+
+    new_sentence += "."
 
     return new_sentence.strip()
 
 # Example usage
 
-sentence = "StopAndSmellTheRoses"
+sentence = input("Enter a sentence with run-together words (example: StopAndSmellTheRoses): ")
 
 new_sentence = word_separator(sentence)
 

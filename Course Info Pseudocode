@@ -1,0 +1,23 @@
+DECLARE a dictionary named courses
+
+DISPLAY "Enter course ID and name course name pairs"
+DISPLAY "Type 'done' when you are done."
+
+LOOP
+    INPUT course_id
+    if course_id equals "done" (not case sensitive)
+        EXIT LOOP
+    INPUT course_name
+    STORE course_name in courses course_id as the key
+END LOOP
+
+    INPUT subject_name (example: COS)
+
+DISPLAY "Courses matching subject", subject_name, ":"
+
+FOR each course_id in courses
+    if course_id starts with subject_name
+    DISPLAY "Courses with subject", subject_name (not case sensitive)
+        DISPLAY course_id and courses[course_id]
+    END if
+END FOR 
